@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class StaticDropdown {
@@ -17,10 +18,11 @@ public class StaticDropdown {
 
         String str = driver.findElement(By.xpath("//body/div[2]/div/div/div[1]/div[3]/div[2]/div[3]/div/div[3]/div/div[2]/input")).getAttribute("value");
         System.out.println(str);
+        Thread.sleep(1000);
+        //Chọn ngày bay
+        driver.findElement(By.cssSelector(".r-16ru68a")).click();
+        System.out.println(driver.findElement(By.cssSelector("div.r-19h5ruw:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)")).getText());
 
-        driver.close();
-
-/*
         //Chọn số người đi máy bay
         System.out.println(driver.findElement(By.xpath("//div[@data-testid='home-page-travellers']")).getText());
         driver.findElement(By.xpath("//div[@data-testid='home-page-travellers']")).click();
@@ -31,8 +33,9 @@ public class StaticDropdown {
             Thread.sleep(500);
         }
         System.out.println(driver.findElement(By.xpath("//div[@data-testid='home-page-travellers']")).getText());
-*/
 
+        Thread.sleep(2000);
+        driver.close();
 
         /* WebElement staticDropdown = driver.findElement(By.xpath("//a[@href='/pc-may-in']"));
         Select dropdown =new Select(staticDropdown);
