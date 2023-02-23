@@ -20,7 +20,6 @@ public class AutoSuggesstiveDropdown {
                 option.click();
                 break;
             }
-
         }
     }
 }
